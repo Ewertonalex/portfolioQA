@@ -1,4 +1,5 @@
 [build]
-  command = "cd site && npm run build"
-  publish = "site/out"
+  base = "site"
+  command = "npm run build"
+  publish = "out"
 
