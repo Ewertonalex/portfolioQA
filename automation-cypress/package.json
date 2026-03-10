@@ -1,0 +1,17 @@
+{
+  "name": "automation-cypress",
+  "version": "1.0.0",
+  "description": "Projeto real de automação de testes com Cypress para portfólio de QA.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "cypress:open": "npx cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^15.11.0"
+  }
+}
