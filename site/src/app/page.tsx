@@ -63,6 +63,24 @@ export default function Home() {
               >
                 Página de testes (E-commerce)
               </a>
+              <a
+                href="/qa-trilha"
+                className="rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-fuchsia-400 hover:text-fuchsia-300"
+              >
+                Iniciar trilha de QA
+              </a>
+              <a
+                href="/qa-docs"
+                className="rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-emerald-400 hover:text-emerald-300"
+              >
+                Ver documentações de QA
+              </a>
+              <a
+                href="/qa-boas-praticas"
+                className="rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/70 transition hover:border-amber-400 hover:text-amber-300"
+              >
+                Boas práticas de qualidade
+              </a>
             </div>
           </div>
 
