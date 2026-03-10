@@ -47,6 +47,31 @@ export default function Home() {
               geração de cenários e documentação, quanto para criar ferramentas e conteúdos que
               acelerem o trabalho de qualidade.
             </p>
+            <div className="mt-3 space-y-1 text-xs text-zinc-300">
+              <p className="font-semibold text-zinc-100">
+                Em 30 segundos, o que você encontra aqui:
+              </p>
+              <ul className="ml-4 list-disc space-y-0.5">
+                <li>
+                  🎯 <span className="font-medium">Estratégias de QA orientadas a negócio</span>{" "}
+                  aplicadas em sistemas reais de alta criticidade.
+                </li>
+                <li>
+                  🤖{" "}
+                  <span className="font-medium">
+                    Projetos de automação e testes (Cypress, APIs e k6)
+                  </span>{" "}
+                  conectados a um cenário prático de e-commerce.
+                </li>
+                <li>
+                  🧠{" "}
+                  <span className="font-medium">
+                    Trilha completa para iniciantes em QA, documentações e boas práticas
+                  </span>{" "}
+                  para quem quer aprender e para quem quer avaliar minha forma de trabalhar.
+                </li>
+              </ul>
+            </div>
 
             <div className="flex flex-wrap gap-3">
               <a
@@ -285,6 +310,109 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Como uso IA em QA */}
+      <section className="border-b border-zinc-800 bg-black">
+        <div className="mx-auto max-w-5xl px-6 py-16 space-y-6">
+          <div className="space-y-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+              IA no dia a dia de QA
+            </p>
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+              Como uso IA para potencializar qualidade de software.
+            </h2>
+            <p className="text-sm leading-relaxed text-zinc-300 md:text-base">
+              Vejo a IA como uma parceira de trabalho: ela acelera partes do processo, mas{" "}
+              <span className="font-medium">a responsabilidade crítica continua sendo humana</span>
+              . Abaixo estão formas concretas de como integro IA na rotina de QA.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 text-xs text-zinc-300">
+            <div className="space-y-2 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4">
+              <p className="font-semibold text-zinc-50">Geração e refinamento de cenários</p>
+              <ul className="ml-5 list-disc space-y-1">
+                <li>
+                  Uso IA para gerar uma{" "}
+                  <span className="font-medium">primeira lista de cenários de teste</span> a partir
+                  de requisitos ou histórias de usuário.
+                </li>
+                <li>
+                  Em seguida, reviso criticamente, removo redundâncias e adiciono{" "}
+                  <span className="font-medium">cenários de risco</span> que a IA normalmente não
+                  enxerga (regras de negócio específicas, casos de borda sensíveis ao contexto).
+                </li>
+                <li>
+                  Também utilizo IA para{" "}
+                  <span className="font-medium">ajustar a clareza de casos de teste</span> e
+                  documentações, mantendo meu estilo e critérios.
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-2 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4">
+              <p className="font-semibold text-zinc-50">
+                Prompts para simular perfis de usuários e jornadas
+              </p>
+              <ul className="ml-5 list-disc space-y-1">
+                <li>
+                  Crio prompts específicos para simular{" "}
+                  <span className="font-medium">perfis de usuários diferentes</span> (iniciante,
+                  avançado, apressado, indeciso) e entender como eles explorariam o fluxo.
+                </li>
+                <li>
+                  A partir desses perfis, desenho{" "}
+                  <span className="font-medium">jornadas alternativas</span> para complementar os
+                  testes tradicionais e explorar riscos de UX.
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-2 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4">
+              <p className="font-semibold text-zinc-50">
+                Apoio na análise de logs e métricas
+              </p>
+              <ul className="ml-5 list-disc space-y-1">
+                <li>
+                  Uso IA para{" "}
+                  <span className="font-medium">resumir logs extensos ou métricas de execução</span>
+                  , identificando padrões de falha frequentes ou picos de erro.
+                </li>
+                <li>
+                  A partir desse resumo, priorizo{" "}
+                  <span className="font-medium">onde aprofundar a investigação manual</span> e
+                  quais hipóteses devem ser validadas com o time técnico.
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-2 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4">
+              <p className="font-semibold text-zinc-50">
+                Exemplo concreto no cenário de e-commerce
+              </p>
+              <p>
+                No fluxo de checkout da Hero Toys, utilizei IA para gerar uma lista inicial de
+                casos de teste a partir da descrição do requisito (login → carrinho → pagamento →
+                confirmação). A partir dessa base:
+              </p>
+              <ul className="ml-5 list-disc space-y-1 mt-1">
+                <li>
+                  Refinei os cenários adicionando{" "}
+                  <span className="font-medium">casos de pagamento em falha</span> (erro de gateway,
+                  cartão expirado, tempo de resposta alto).
+                </li>
+                <li>
+                  Incluí cenários de{" "}
+                  <span className="font-medium">recuperação de fluxo</span> (usuário volta para o
+                  carrinho, altera quantidade, aplica cupom, tenta de novo).
+                </li>
+                <li>
+                  Registrei os cenários finais na seção de documentação e nos projetos de
+                  automação, garantindo que{" "}
+                  <span className="font-medium">o que a IA sugeriu virou algo revisado e confiável</span>.
+                </li>
+              </ul>
             </div>
           </div>
         </div>

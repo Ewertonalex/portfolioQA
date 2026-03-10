@@ -53,6 +53,30 @@ Atualmente sou **Líder do Time de QA na Uhuu Tecnologia**, participando ativame
 
 ---
 
+## 🤖 Como utilizo IA no meu dia a dia de QA
+
+- **Geração e refinamento de cenários de teste**
+  - Uso IA para gerar uma primeira lista de cenários de teste a partir de requisitos ou histórias de usuário, sempre com revisão crítica posterior.
+  - Refino essa lista removendo redundâncias e adicionando cenários de risco que exigem conhecimento de negócio e contexto do produto.
+
+- **Apoio em documentação e comunicação**
+  - Uso IA para reformular e melhorar a clareza de casos de teste, relatórios de execução e bug reports, mantendo meu estilo e critérios de qualidade.
+  - Acelero a criação de templates e guias (como os de relatório, bug e plano de testes) que depois são customizados para cada projeto.
+
+- **Simulação de perfis de usuários e jornadas**
+  - Crio prompts específicos para simular diferentes perfis de usuários (iniciante, avançado, apressado, indeciso) e pensar em jornadas alternativas de uso.
+  - A partir dessas simulações, identifico fluxos que merecem testes exploratórios adicionais e refinamento de UX.
+
+- **Análise de logs e métricas**
+  - Utilizo IA para resumir logs extensos, falhas recorrentes e métricas de execução, ajudando a direcionar investigações mais profundas.
+  - Com base nesses resumos, priorizo onde concentrar esforço de testes e quais hipóteses validar com o time técnico.
+
+- **Exemplo prático no cenário de e-commerce**
+  - No fluxo de checkout da loja demo de brinquedos de heróis, uso IA para gerar a primeira versão dos casos de teste (login → carrinho → pagamento → confirmação).
+  - Em seguida, complemento com cenários de falha (erro de gateway, cartão inválido, latência alta) e de recuperação de fluxo (voltar ao carrinho, alterar itens, aplicar cupom), garantindo que o resultado final seja sempre revisado e confiável.
+
+---
+
 ## 🗺️ Mapa do Portfólio
 
 - **🌐 Site do Portfólio (Front moderno)**: _em construção_
@@ -90,7 +114,8 @@ Na pasta `automation-cypress` ficará um **projeto real de automação**, cobrin
 - Testes de API utilizando o próprio Cypress.
 - Estrutura organizada (page objects, comandos customizados, cenários reutilizáveis).
 
-O objetivo é mostrar não só o código, mas **como penso estratégia, cobertura e leitura dos resultados**.
+O objetivo é mostrar não só o código, mas **como penso estratégia, cobertura e leitura dos resultados**.  
+Também utilizo IA como apoio na **geração inicial de cenários**, rascunho de comandos customizados e refino das asserções, sempre com revisão manual cuidadosa para garantir que os testes reflitam o negócio e os riscos reais.
 
 ---
 
@@ -129,7 +154,7 @@ O foco é demonstrar **como o QA pode antecipar problemas de performance** antes
 ## 🧪 Projetos pessoais em destaque
 
 - **Agente IA – Cenários de Testes** (`agente-IA-cenarios-de-testes`)  
-  Assistente focado em apoiar QA na geração de cenários e ideias de testes a partir de descrições em linguagem natural, ajudando a ampliar a cobertura e a criatividade na fase de design.
+  Assistente focado em apoiar QA na geração de cenários e ideias de testes a partir de descrições em linguagem natural, ajudando a ampliar a cobertura e a criatividade na fase de design. Demonstra, na prática, como estruturo prompts e reviso criticamente o que a IA produz antes de levar para o dia a dia de testes.
 
 - **QA Milionário** (`qa-milionario`)  
   Jogo educativo no estilo *Show do Milhão* voltado para QA, com perguntas baseadas em **ISTQB CTFL**, recursos de ranking, ajudas e foco em aprendizagem gamificada de qualidade de software.
