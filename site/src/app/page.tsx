@@ -38,46 +38,50 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-sm leading-relaxed text-zinc-300 md:text-base">
-              Sou <span className="font-medium">Ewerton Alexander</span>, Líder de QA
-              orientado ao negócio. Aqui você encontra minha visão de qualidade, projetos
-              reais de automação, testes de API, performance e muito conteúdo prático para
-              quem vive qualidade de software no dia a dia.
+              Sou <span className="font-medium">Ewerton Alexander</span>, Líder de QA orientado ao
+              negócio. Este portfólio reúne minha visão de qualidade aplicada,{" "}
+              <span className="font-medium">projetos reais</span> de automação Web e API, testes
+              de performance, materiais de estudo em QA e exemplos de documentações e boas
+              práticas. Tenho familiaridade no uso de{" "}
+              <span className="font-medium">IA no dia a dia</span> — tanto para apoiar análise,
+              geração de cenários e documentação, quanto para criar ferramentas e conteúdos que
+              acelerem o trabalho de qualidade.
             </p>
 
             <div className="flex flex-wrap gap-3">
               <a
                 href="#projetos"
-                className="rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-medium text-black shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
+                className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-medium text-black shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400 md:min-w-[190px]"
               >
                 Ver projetos em QA
               </a>
               <a
                 href="#fundamentos"
-                className="rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-emerald-400 hover:text-emerald-300"
+                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-emerald-400 hover:text-emerald-300 md:min-w-[190px]"
               >
                 Fundamentos de qualidade
               </a>
               <a
                 href="/test-lab"
-                className="rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-cyan-400 hover:text-cyan-300"
+                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-cyan-400 hover:text-cyan-300 md:min-w-[230px]"
               >
                 Página de testes (E-commerce)
               </a>
               <a
                 href="/qa-trilha"
-                className="rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-fuchsia-400 hover:text-fuchsia-300"
+                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-fuchsia-400 hover:text-fuchsia-300 md:min-w-[210px]"
               >
                 Iniciar trilha de QA
               </a>
               <a
                 href="/qa-docs"
-                className="rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-emerald-400 hover:text-emerald-300"
+                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-emerald-400 hover:text-emerald-300 md:min-w-[220px]"
               >
                 Ver documentações de QA
               </a>
               <a
                 href="/qa-boas-praticas"
-                className="rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/70 transition hover:border-amber-400 hover:text-amber-300"
+                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/70 transition hover:border-amber-400 hover:text-amber-300 md:min-w-[220px]"
               >
                 Boas práticas de qualidade
               </a>
