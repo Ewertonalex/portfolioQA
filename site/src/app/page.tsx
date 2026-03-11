@@ -114,8 +114,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex w-full max-w-sm flex-col items-center gap-6 md:w-80">
-            <div className="relative w-full flex justify-end">
+          <div className="flex w-full max-w-sm flex-col items-center gap-6 md:w-80 md:pt-4">
+            <div className="relative w-full flex justify-end md:-mt-6">
               <InteractiveOrb />
             </div>
             <div className="w-full rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 shadow-lg shadow-emerald-500/10 backdrop-blur">

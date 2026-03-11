@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, MouseEvent } from "react";
+import Image from "next/image";
 
 export default function InteractiveOrb() {
   const [rotation, setRotation] = useState({ x: 22, y: -26 });
@@ -45,7 +46,7 @@ export default function InteractiveOrb() {
 
   return (
     <div
-      className="pointer-events-auto relative hidden h-64 w-64 cursor-grab md:block"
+      className="pointer-events-auto relative hidden cursor-grab md:block md:h-64 md:w-64"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseUpOrLeave}
@@ -94,6 +95,22 @@ export default function InteractiveOrb() {
               "0 0 40px rgba(16,185,129,0.45), 0 0 80px rgba(6,182,212,0.35)",
           }}
         />
+
+        {/* Foto central dentro do globo */}
+        <div
+          className="pointer-events-none absolute inset-12 flex items-center justify-center"
+          style={{ transform: "translateZ(40px)" }}
+        >
+          <div className="relative h-24 w-24 overflow-hidden rounded-full border border-emerald-300/60 bg-zinc-900/90 shadow-[0_0_30px_rgba(16,185,129,0.55)]">
+            <Image
+              src="/ewerton.png"
+              alt="Foto de Ewerton Alexander"
+              fill
+              sizes="96px"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
