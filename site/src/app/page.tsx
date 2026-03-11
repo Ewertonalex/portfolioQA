@@ -1,4 +1,5 @@
 import Image from "next/image";
+import InteractiveOrb from "./InteractiveOrb";
 
 export default function Home() {
   return (
@@ -113,26 +114,31 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex w-full max-w-sm flex-col gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 shadow-lg shadow-emerald-500/10 backdrop-blur md:w-80">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
-              Stack de QA
-            </p>
-            <div className="grid grid-cols-2 gap-3 text-xs">
-              <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/5 p-3">
-                <p className="font-semibold text-emerald-300">Automação</p>
-                <p className="mt-1 text-[11px] text-zinc-300">Cypress · Web & API</p>
-              </div>
-              <div className="rounded-xl border border-cyan-500/40 bg-cyan-500/5 p-3">
-                <p className="font-semibold text-cyan-300">APIs</p>
-                <p className="mt-1 text-[11px] text-zinc-300">Postman · Collections</p>
-              </div>
-              <div className="rounded-xl border border-fuchsia-500/40 bg-fuchsia-500/5 p-3">
-                <p className="font-semibold text-fuchsia-300">Performance</p>
-                <p className="mt-1 text-[11px] text-zinc-300">k6 · Carga & Stress</p>
-              </div>
-              <div className="rounded-xl border border-amber-500/40 bg-amber-500/5 p-3">
-                <p className="font-semibold text-amber-300">Processos</p>
-                <p className="mt-1 text-[11px] text-zinc-300">Scrum · Backlog · BDD</p>
+          <div className="flex w-full max-w-sm flex-col items-center gap-6 md:w-80">
+            <div className="relative w-full flex justify-end">
+              <InteractiveOrb />
+            </div>
+            <div className="w-full rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 shadow-lg shadow-emerald-500/10 backdrop-blur">
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-400">
+                Stack de QA
+              </p>
+              <div className="mt-3 grid grid-cols-2 gap-3 text-xs">
+                <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/5 p-3">
+                  <p className="font-semibold text-emerald-300">Automação</p>
+                  <p className="mt-1 text-[11px] text-zinc-300">Cypress · Web & API</p>
+                </div>
+                <div className="rounded-xl border border-cyan-500/40 bg-cyan-500/5 p-3">
+                  <p className="font-semibold text-cyan-300">APIs</p>
+                  <p className="mt-1 text-[11px] text-zinc-300">Postman · Collections</p>
+                </div>
+                <div className="rounded-xl border border-fuchsia-500/40 bg-fuchsia-500/5 p-3">
+                  <p className="font-semibold text-fuchsia-300">Performance</p>
+                  <p className="mt-1 text-[11px] text-zinc-300">k6 · Carga & Stress</p>
+                </div>
+                <div className="rounded-xl border border-amber-500/40 bg-amber-500/5 p-3">
+                  <p className="font-semibold text-amber-300">Processos</p>
+                  <p className="mt-1 text-[11px] text-zinc-300">Scrum · Backlog · BDD</p>
+                </div>
               </div>
             </div>
           </div>
@@ -309,6 +315,118 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Habilidades e stack de QA */}
+      <section className="border-b border-zinc-800 bg-black">
+        <div className="mx-auto max-w-5xl px-6 py-16 space-y-10">
+          <div className="space-y-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+              Habilidades em QA
+            </p>
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+              Onde atuo com mais profundidade.
+            </h2>
+            <p className="text-sm leading-relaxed text-zinc-300 md:text-base max-w-3xl">
+              Minha atuação combina visão de negócio, estratégia de testes, automação e mentoria.
+              Abaixo, uma visão rápida de onde mais agrego valor em times de produto.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
+              <div className="flex items-center justify-between text-xs">
+                <p className="font-semibold text-zinc-50">Estratégia de testes & qualidade</p>
+                <span className="text-emerald-300">90%</span>
+              </div>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
+                <div className="h-full w-[90%] rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400" />
+              </div>
+              <ul className="mt-2 space-y-1 text-xs text-zinc-300">
+                <li>• Definição de abordagem de testes por risco e valor.</li>
+                <li>• Escolha de tipos de teste e cobertura mínima aceitável.</li>
+                <li>• Apoio em roadmap de qualidade em squads e produtos.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
+              <div className="flex items-center justify-between text-xs">
+                <p className="font-semibold text-zinc-50">Automação Web, API e regressão</p>
+                <span className="text-emerald-300">85%</span>
+              </div>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
+                <div className="h-full w-[85%] rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400" />
+              </div>
+              <ul className="mt-2 space-y-1 text-xs text-zinc-300">
+                <li>• Automação de fluxos críticos end-to-end com Cypress.</li>
+                <li>• Testes de API com collections organizadas e asserts de negócio.</li>
+                <li>• Suites de regressão focadas em estabilidade e manutenção.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
+              <div className="flex items-center justify-between text-xs">
+                <p className="font-semibold text-zinc-50">Performance, observabilidade e riscos</p>
+                <span className="text-emerald-300">80%</span>
+              </div>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
+                <div className="h-full w-[80%] rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400" />
+              </div>
+              <ul className="mt-2 space-y-1 text-xs text-zinc-300">
+                <li>• Criação de scripts de carga e stress com k6.</li>
+                <li>• Leitura de métricas e logs para mapear gargalos.</li>
+                <li>• Comunicação de riscos técnicos em linguagem de negócio.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
+              <div className="flex items-center justify-between text-xs">
+                <p className="font-semibold text-zinc-50">Mentoria, escrita técnica e liderança</p>
+                <span className="text-emerald-300">88%</span>
+              </div>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
+                <div className="h-full w-[88%] rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400" />
+              </div>
+              <ul className="mt-2 space-y-1 text-xs text-zinc-300">
+                <li>• Apoio a QAs em início de carreira com trilhas e feedbacks.</li>
+                <li>• Escrita de documentações, planos e relatórios executivos.</li>
+                <li>• Facilitação entre Produto, Negócio, Desenvolvimento e Operações.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+              Minha stack tecnológica em QA
+            </p>
+            <div className="grid gap-3 text-xs text-zinc-200 sm:grid-cols-2 md:grid-cols-3">
+              <div className="flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/70 px-3 py-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                <span>Cypress · Web & API</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/70 px-3 py-2">
+                <span className="h-2 w-2 rounded-full bg-cyan-400" />
+                <span>Postman · Collections & environments</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/70 px-3 py-2">
+                <span className="h-2 w-2 rounded-full bg-fuchsia-400" />
+                <span>k6 · Carga, stress e smoke de performance</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/70 px-3 py-2">
+                <span className="h-2 w-2 rounded-full bg-amber-400" />
+                <span>BDD · Gherkin, critérios de aceite e cenários</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/70 px-3 py-2">
+                <span className="h-2 w-2 rounded-full bg-sky-400" />
+                <span>Jira / Zephyr · Gestão de testes e incidentes</span>
+              </div>
+              <div className="flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/70 px-3 py-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-300" />
+                <span>Scrum · Planejamento, reviews e cerimônias</span>
               </div>
             </div>
           </div>
