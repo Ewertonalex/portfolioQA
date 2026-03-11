@@ -1,9 +1,29 @@
 import Image from "next/image";
 import InteractiveOrb from "../InteractiveOrb";
+import Link from "next/link";
 
 export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-black text-zinc-50">
+      <header className="border-b border-zinc-800 bg-gradient-to-r from-zinc-950 via-black to-zinc-950">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 text-sm">
+          <div className="space-y-0.5">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-400">
+              Portfólio · Ewerton Alexander
+            </p>
+            <p className="text-xs text-zinc-400">
+              Visão completa de qualidade, projetos e trajetória.
+            </p>
+          </div>
+          <Link
+            href="/"
+            className="hidden rounded-full border border-zinc-700 px-3 py-1.5 text-xs font-medium text-zinc-100 transition hover:border-emerald-400 hover:text-emerald-300 sm:inline-flex"
+          >
+            Voltar para boas-vindas
+          </Link>
+        </div>
+      </header>
+
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-zinc-800 bg-gradient-to-b from-zinc-900/80 to-black">
         <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl" />
