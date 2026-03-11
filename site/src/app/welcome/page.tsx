@@ -40,7 +40,7 @@ export default function WelcomePage() {
                 Jogar o QA Quiz
               </Link>
               <Link
-                href="/"
+                href="/portfolio"
                 className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-emerald-400 hover:text-emerald-300"
               >
                 Ir direto para o portfólio
