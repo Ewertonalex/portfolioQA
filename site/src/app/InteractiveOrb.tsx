@@ -3,16 +3,27 @@
 import { useState, useRef, useEffect, MouseEvent } from "react";
 import Image from "next/image";
 
+const DRAG_SENSITIVITY = 1.4;
+const INERTIA_FRICTION = 0.92;
+const MIN_VELOCITY = 0.2;
+
 export default function InteractiveOrb() {
   const [rotation, setRotation] = useState({ x: 22, y: -26 });
   const isDragging = useRef(false);
   const lastPos = useRef<{ x: number; y: number } | null>(null);
+  const velocity = useRef({ x: 0, y: 0 });
+  const inertiaId = useRef<number | null>(null);
 
   const transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
 
   const handleMouseDown = (event: MouseEvent<HTMLDivElement>) => {
+    if (inertiaId.current != null) {
+      cancelAnimationFrame(inertiaId.current);
+      inertiaId.current = null;
+    }
     isDragging.current = true;
     lastPos.current = { x: event.clientX, y: event.clientY };
+    velocity.current = { x: 0, y: 0 };
   };
 
   const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
@@ -23,25 +34,51 @@ export default function InteractiveOrb() {
 
     lastPos.current = { x: event.clientX, y: event.clientY };
 
+    velocity.current = {
+      x: -deltaY * DRAG_SENSITIVITY,
+      y: deltaX * DRAG_SENSITIVITY,
+    };
+
     setRotation((prev) => ({
-      x: Math.max(-85, Math.min(85, prev.x + deltaY * -0.6)),
-      y: prev.y + deltaX * 0.9,
+      x: Math.max(-85, Math.min(85, prev.x - deltaY * DRAG_SENSITIVITY)),
+      y: prev.y + deltaX * DRAG_SENSITIVITY,
     }));
   };
 
+  const runInertia = () => {
+    const v = velocity.current;
+    if (Math.abs(v.x) < MIN_VELOCITY && Math.abs(v.y) < MIN_VELOCITY) {
+      inertiaId.current = null;
+      return;
+    }
+    velocity.current = { x: v.x * INERTIA_FRICTION, y: v.y * INERTIA_FRICTION };
+    setRotation((prev) => ({
+      x: Math.max(-85, Math.min(85, prev.x + v.x)),
+      y: prev.y + v.y,
+    }));
+    inertiaId.current = requestAnimationFrame(runInertia);
+  };
+
   const handleMouseUpOrLeave = () => {
+    if (!isDragging.current) return;
     isDragging.current = false;
     lastPos.current = null;
+    inertiaId.current = requestAnimationFrame(runInertia);
   };
 
   useEffect(() => {
     const handleWindowMouseUp = () => {
+      if (!isDragging.current) return;
       isDragging.current = false;
       lastPos.current = null;
+      inertiaId.current = requestAnimationFrame(runInertia);
     };
 
     window.addEventListener("mouseup", handleWindowMouseUp);
-    return () => window.removeEventListener("mouseup", handleWindowMouseUp);
+    return () => {
+      window.removeEventListener("mouseup", handleWindowMouseUp);
+      if (inertiaId.current != null) cancelAnimationFrame(inertiaId.current);
+    };
   }, []);
 
   return (

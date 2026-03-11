@@ -16,7 +16,7 @@ export default function WelcomePage() {
             <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
               Antes de entrar no portfólio,{" "}
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                que tal aquecer o cérebro?
+                bora testar seu lado QA?
               </span>
             </h1>
             <p className="text-sm leading-relaxed text-zinc-300 md:text-base">

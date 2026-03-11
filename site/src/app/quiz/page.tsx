@@ -678,6 +678,15 @@ export default function QuizPage() {
     return `${playerName}, a boa notícia é: ninguém nasce QA sênior. Que tal transformar esse resultado em plano de estudo?`;
   };
 
+  const getBadgeLabel = () => {
+    const percentage = totalQuestions ? Math.round((score / totalQuestions) * 100) : 0;
+    if (percentage === 100) return "Líder de Qualidade";
+    if (percentage >= 80) return "QA em campo de batalha";
+    if (percentage >= 50) return "Boa base de QA";
+    if (percentage >= 30) return "Iniciante em QA";
+    return "Começando na trilha";
+  };
+
   return (
     <div className="min-h-screen bg-black text-zinc-50">
       <header className="border-b border-zinc-800 bg-gradient-to-r from-zinc-950 via-black to-zinc-950">
@@ -808,7 +817,11 @@ export default function QuizPage() {
                   </span>{" "}
                   perguntas.
                 </p>
-                <p className="text-[13px]">{getResultMessage()}</p>
+                <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-emerald-400/60 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-100">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  {getBadgeLabel()}
+                </div>
+                <p className="mt-2 text-[13px]">{getResultMessage()}</p>
               </div>
             )}
 
@@ -834,27 +847,40 @@ export default function QuizPage() {
           </div>
         ) : (
           <div className="mx-auto max-w-2xl space-y-5 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 shadow-lg shadow-emerald-500/10">
-            <div className="flex items-center justify-between text-xs text-zinc-400">
-              <p>
-                Jogador: <span className="font-semibold text-zinc-100">{playerName}</span>
-              </p>
-              <div className="flex items-center gap-4">
+            <div className="space-y-2 text-xs text-zinc-400">
+              <div className="flex items-center justify-between">
                 <p>
-                  Pergunta{" "}
-                  <span className="font-semibold text-emerald-300">
-                    {currentIndex + 1}/{totalQuestions}
-                  </span>
+                  Jogador: <span className="font-semibold text-zinc-100">{playerName}</span>
                 </p>
-                <p>
-                  Tempo:{" "}
-                  <span
-                    className={`font-semibold ${
-                      timeLeft <= 3 ? "text-rose-400" : "text-emerald-300"
-                    }`}
-                  >
-                    {timeLeft}s
-                  </span>
-                </p>
+                <div className="flex items-center gap-4">
+                  <p>
+                    Pergunta{" "}
+                    <span className="font-semibold text-emerald-300">
+                      {currentIndex + 1}/{totalQuestions}
+                    </span>
+                  </p>
+                  <p>
+                    Tempo:{" "}
+                    <span
+                      className={`font-semibold ${
+                        timeLeft <= 3 ? "text-rose-400" : "text-emerald-300"
+                      }`}
+                    >
+                      {timeLeft}s
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 transition-all duration-300"
+                  style={{
+                    width:
+                      totalQuestions > 0
+                        ? `${((currentIndex + 1) / totalQuestions) * 100}%`
+                        : "0%",
+                  }}
+                />
               </div>
             </div>
 

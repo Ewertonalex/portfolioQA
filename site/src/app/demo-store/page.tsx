@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 type Product = {
@@ -126,6 +127,24 @@ export default function DemoStore() {
 
   return (
     <div className="min-h-screen bg-black text-zinc-50">
+      <header className="border-b border-zinc-800 bg-gradient-to-r from-zinc-950 via-black to-zinc-950">
+        <div className="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="space-y-0.5">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-400">
+              Hero Toys · Demo
+            </p>
+            <p className="text-xs text-zinc-400">
+              Loja para cenários de teste
+            </p>
+          </div>
+          <Link
+            href="/portfolio"
+            className="inline-flex w-fit rounded-full border border-zinc-700 px-3 py-1.5 text-xs font-medium text-zinc-100 transition hover:border-emerald-400 hover:text-emerald-300"
+          >
+            Voltar para o portfólio
+          </Link>
+        </div>
+      </header>
       <section className="border-b border-zinc-800 bg-gradient-to-b from-zinc-900/80 to-black">
         <div className="mx-auto max-w-5xl px-6 py-10 space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400/80">

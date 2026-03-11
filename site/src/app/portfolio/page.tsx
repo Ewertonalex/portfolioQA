@@ -1,6 +1,33 @@
+"use client";
+
 import Image from "next/image";
 import InteractiveOrb from "../InteractiveOrb";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+function SkillBar({ label, value }: { label: string; value: number }) {
+  const [filled, setFilled] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setFilled(true), 150);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return (
+    <>
+      <div className="flex flex-col gap-1 text-xs sm:flex-row sm:items-center sm:justify-between">
+        <p className="font-semibold text-zinc-50">{label}</p>
+        <span className="text-emerald-300">{value}%</span>
+      </div>
+      <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
+        <div
+          className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 transition-all duration-700 ease-out"
+          style={{ width: filled ? `${value}%` : "0%" }}
+        />
+      </div>
+    </>
+  );
+}
 
 export default function PortfolioPage() {
   return (
@@ -168,18 +195,35 @@ export default function PortfolioPage() {
       {/* Fundamentos de QA */}
       <section id="fundamentos" className="border-b border-zinc-800 bg-black">
         <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 py-16 md:flex-row">
-          <div className="max-w-md space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-              Fundamentos
-            </p>
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-              Qualidade de software na prática.
-            </h2>
-            <p className="text-sm leading-relaxed text-zinc-300 md:text-base">
-              Qualidade não é um estágio final, é uma responsabilidade compartilhada desde a
-              ideia até a produção. O papel do QA moderno é prevenir problemas, clarificar
-              expectativas e traduzir riscos técnicos em impacto de negócio.
-            </p>
+          <div className="max-w-md space-y-4">
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                Fundamentos
+              </p>
+              <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+                Qualidade de software na prática.
+              </h2>
+              <p className="text-sm leading-relaxed text-zinc-300 md:text-base">
+                Qualidade não é um estágio final, é uma responsabilidade compartilhada desde a
+                ideia até a produção. O papel do QA moderno é prevenir problemas, clarificar
+                expectativas e traduzir riscos técnicos em impacto de negócio.
+              </p>
+            </div>
+
+            <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-zinc-300">
+              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                Foco em valor de negócio
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full border border-cyan-500/40 bg-cyan-500/10 px-3 py-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                Pagamentos e alta volumetria
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full border border-fuchsia-500/40 bg-fuchsia-500/10 px-3 py-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
+                Mentoria e formação de QAs
+              </span>
+            </div>
           </div>
 
           <div className="grid flex-1 gap-4 md:grid-cols-2">
@@ -241,55 +285,77 @@ export default function PortfolioPage() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-[2fr,1.5fr]">
-            {/* Experiência */}
+            {/* Experiência em forma de timeline */}
             <div className="space-y-5">
               <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-zinc-400">
                 Experiência profissional
               </h3>
-              <div className="space-y-4 text-sm text-zinc-300">
-                <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-                  <p className="text-xs font-semibold text-emerald-300">
-                    Uhuu Tecnologia · Líder de QA
-                  </p>
-                  <p className="text-[11px] text-zinc-400">Dez/2025 – Atual · Remoto</p>
-                  <p className="mt-2 text-xs text-zinc-300">
-                    Liderança de time de QA orientada ao negócio, definição de estratégia de
-                    qualidade, análise de requisitos, critérios de aceite e apoio à priorização
-                    de backlog em sistemas de alta volumetria.
-                  </p>
+              <div className="relative space-y-6 pl-2 text-sm text-zinc-300">
+                <div className="pointer-events-none absolute left-[13px] top-1 bottom-1 w-px bg-gradient-to-b from-emerald-500/60 via-emerald-500/20 to-transparent" />
+
+                <div className="relative flex gap-4">
+                  <div className="mt-1 flex h-3 w-3 flex-shrink-0 items-center justify-center">
+                    <span className="h-3 w-3 rounded-full border border-emerald-400 bg-emerald-500/70 shadow-[0_0_18px_rgba(16,185,129,0.8)] animate-pulse" />
+                  </div>
+                  <div className="flex-1 rounded-xl border border-zinc-800 bg-zinc-900/70 p-4">
+                    <p className="text-xs font-semibold text-emerald-300">
+                      Uhuu Tecnologia · Líder de QA
+                    </p>
+                    <p className="text-[11px] text-zinc-400">Dez/2025 – Atual · Remoto</p>
+                    <p className="mt-2 text-xs text-zinc-300">
+                      Liderança de time de QA orientada ao negócio, definição de estratégia de
+                      qualidade, análise de requisitos, critérios de aceite e apoio à priorização
+                      de backlog em sistemas de alta volumetria.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-                  <p className="text-xs font-semibold text-emerald-300">
-                    Uhuu Tecnologia · Analista de Testes Sênior / Pleno
-                  </p>
-                  <p className="text-[11px] text-zinc-400">2023 – Dez/2025 · Remoto</p>
-                  <p className="mt-2 text-xs text-zinc-300">
-                    Validação de fluxos críticos de pagamento (PIX, adquirentes, fallback),
-                    criação de cenários BDD, relatórios para decisão e mentoria técnica.
-                  </p>
+                <div className="relative flex gap-4">
+                  <div className="mt-1 flex h-3 w-3 flex-shrink-0 items-center justify-center">
+                    <span className="h-3 w-3 rounded-full border border-emerald-400/70 bg-emerald-500/50 animate-pulse" />
+                  </div>
+                  <div className="flex-1 rounded-xl border border-zinc-800 bg-zinc-900/70 p-4">
+                    <p className="text-xs font-semibold text-emerald-300">
+                      Uhuu Tecnologia · Analista de Testes Sênior / Pleno
+                    </p>
+                    <p className="text-[11px] text-zinc-400">2023 – Dez/2025 · Remoto</p>
+                    <p className="mt-2 text-xs text-zinc-300">
+                      Validação de fluxos críticos de pagamento (PIX, adquirentes, fallback),
+                      criação de cenários BDD, relatórios para decisão e mentoria técnica.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-                  <p className="text-xs font-semibold text-emerald-300">
-                    Compass.uol · Testador de Software Jr
-                  </p>
-                  <p className="text-[11px] text-zinc-400">2022 – 2023 · Remoto</p>
-                  <p className="mt-2 text-xs text-zinc-300">
-                    Criação de cenários BDD (Gherkin), análise de defeitos e gestão em
-                    JIRA/Zephyr, com foco em amadurecimento de processos de teste.
-                  </p>
+                <div className="relative flex gap-4">
+                  <div className="mt-1 flex h-3 w-3 flex-shrink-0 items-center justify-center">
+                    <span className="h-3 w-3 rounded-full border border-emerald-400/60 bg-emerald-500/40 animate-pulse" />
+                  </div>
+                  <div className="flex-1 rounded-xl border border-zinc-800 bg-zinc-900/70 p-4">
+                    <p className="text-xs font-semibold text-emerald-300">
+                      Compass.uol · Testador de Software Jr
+                    </p>
+                    <p className="text-[11px] text-zinc-400">2022 – 2023 · Remoto</p>
+                    <p className="mt-2 text-xs text-zinc-300">
+                      Criação de cenários BDD (Gherkin), análise de defeitos e gestão em
+                      JIRA/Zephyr, com foco em amadurecimento de processos de teste.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-                  <p className="text-xs font-semibold text-emerald-300">
-                    Korporate Solution Factory · QA Specialist (Freelance)
-                  </p>
-                  <p className="text-[11px] text-zinc-400">2022 · Remoto</p>
-                  <p className="mt-2 text-xs text-zinc-300">
-                    Planejamento e execução de testes E2E, com relatórios executivos voltados
-                    à tomada de decisão de negócio.
-                  </p>
+                <div className="relative flex gap-4">
+                  <div className="mt-1 flex h-3 w-3 flex-shrink-0 items-center justify-center">
+                    <span className="h-3 w-3 rounded-full border border-emerald-400/40 bg-emerald-500/30 animate-pulse" />
+                  </div>
+                  <div className="flex-1 rounded-xl border border-zinc-800 bg-zinc-900/70 p-4">
+                    <p className="text-xs font-semibold text-emerald-300">
+                      Korporate Solution Factory · QA Specialist (Freelance)
+                    </p>
+                    <p className="text-[11px] text-zinc-400">2022 · Remoto</p>
+                    <p className="mt-2 text-xs text-zinc-300">
+                      Planejamento e execução de testes E2E, com relatórios executivos voltados
+                      à tomada de decisão de negócio.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -359,13 +425,7 @@ export default function PortfolioPage() {
 
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
-              <div className="flex items-center justify-between text-xs">
-                <p className="font-semibold text-zinc-50">Estratégia de testes & qualidade</p>
-                <span className="text-emerald-300">90%</span>
-              </div>
-              <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
-                <div className="h-full w-[90%] rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400" />
-              </div>
+              <SkillBar label="Estratégia de testes & qualidade" value={90} />
               <ul className="mt-2 space-y-1 text-xs text-zinc-300">
                 <li>• Definição de abordagem de testes por risco e valor.</li>
                 <li>• Escolha de tipos de teste e cobertura mínima aceitável.</li>
@@ -374,13 +434,7 @@ export default function PortfolioPage() {
             </div>
 
             <div className="space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
-              <div className="flex items-center justify-between text-xs">
-                <p className="font-semibold text-zinc-50">Automação Web, API e regressão</p>
-                <span className="text-emerald-300">85%</span>
-              </div>
-              <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
-                <div className="h-full w-[85%] rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400" />
-              </div>
+              <SkillBar label="Automação Web, API e regressão" value={85} />
               <ul className="mt-2 space-y-1 text-xs text-zinc-300">
                 <li>• Automação de fluxos críticos end-to-end com Cypress.</li>
                 <li>• Testes de API com collections organizadas e asserts de negócio.</li>
@@ -389,13 +443,7 @@ export default function PortfolioPage() {
             </div>
 
             <div className="space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
-              <div className="flex items-center justify-between text-xs">
-                <p className="font-semibold text-zinc-50">Performance, observabilidade e riscos</p>
-                <span className="text-emerald-300">80%</span>
-              </div>
-              <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
-                <div className="h-full w-[80%] rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400" />
-              </div>
+              <SkillBar label="Performance, observabilidade e riscos" value={80} />
               <ul className="mt-2 space-y-1 text-xs text-zinc-300">
                 <li>• Criação de scripts de carga e stress com k6.</li>
                 <li>• Leitura de métricas e logs para mapear gargalos.</li>
@@ -404,13 +452,7 @@ export default function PortfolioPage() {
             </div>
 
             <div className="space-y-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
-              <div className="flex items-center justify-between text-xs">
-                <p className="font-semibold text-zinc-50">Mentoria, escrita técnica e liderança</p>
-                <span className="text-emerald-300">88%</span>
-              </div>
-              <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
-                <div className="h-full w-[88%] rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400" />
-              </div>
+              <SkillBar label="Mentoria, escrita técnica e liderança" value={88} />
               <ul className="mt-2 space-y-1 text-xs text-zinc-300">
                 <li>• Apoio a QAs em início de carreira com trilhas e feedbacks.</li>
                 <li>• Escrita de documentações, planos e relatórios executivos.</li>
@@ -575,7 +617,7 @@ export default function PortfolioPage() {
           <div className="grid gap-5 md:grid-cols-3">
             <a
               href="/projects/cypress"
-              className="group flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-left transition hover:border-emerald-400 hover:bg-zinc-900"
+              className="group flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-left shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:border-emerald-400 hover:bg-zinc-900 hover:shadow-lg hover:shadow-emerald-500/20"
             >
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">
@@ -596,7 +638,7 @@ export default function PortfolioPage() {
 
             <a
               href="/projects/postman"
-              className="group flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-left transition hover:border-cyan-400 hover:bg-zinc-900"
+              className="group flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-left shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:border-cyan-400 hover:bg-zinc-900 hover:shadow-lg hover:shadow-cyan-500/20"
             >
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-400">
@@ -617,7 +659,7 @@ export default function PortfolioPage() {
 
             <a
               href="/projects/k6"
-              className="group flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-left transition hover:border-fuchsia-400 hover:bg-zinc-900"
+              className="group flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-left shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:border-fuchsia-400 hover:bg-zinc-900 hover:shadow-lg hover:shadow-fuchsia-500/20"
             >
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-fuchsia-400">
