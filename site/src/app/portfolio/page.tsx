@@ -158,6 +158,12 @@ export default function PortfolioPage() {
               >
                 Boas práticas de qualidade
               </a>
+              <a
+                href="/tipos-de-testes"
+                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-emerald-400 hover:text-emerald-300 md:min-w-[200px]"
+              >
+                5 tipos de testes (QA)
+              </a>
             </div>
           </div>
 
@@ -268,6 +274,21 @@ export default function PortfolioPage() {
                 <li>• Relatórios que ajudam gestão a decidir com confiança.</li>
               </ul>
             </div>
+
+            <Link
+              href="/tipos-de-testes"
+              className="rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-4 transition hover:border-emerald-400 hover:bg-emerald-500/15 md:col-span-2"
+            >
+              <p className="text-xs font-semibold text-emerald-300">
+                5 tipos de testes que todo QA deve conhecer
+              </p>
+              <p className="mt-1 text-[11px] text-zinc-300">
+                Funcional, Exploratório, Regressivo, Integração e Aceitação — com explicações e exemplos práticos.
+              </p>
+              <span className="mt-2 inline-block text-xs font-medium text-emerald-400">
+                Ler material completo →
+              </span>
+            </Link>
           </div>
         </div>
       </section>
