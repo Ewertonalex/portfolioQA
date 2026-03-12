@@ -121,49 +121,42 @@ export default function PortfolioPage() {
               </ul>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="space-y-3">
+              <div className="flex flex-wrap gap-3">
               <a
                 href="#projetos"
-                className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-medium text-black shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400 md:min-w-[190px]"
+                className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-2.5 text-sm font-medium text-black shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
               >
                 Ver projetos em QA
               </a>
-              <a
-                href="#fundamentos"
-                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-emerald-400 hover:text-emerald-300 md:min-w-[190px]"
-              >
-                Fundamentos de qualidade
-              </a>
-              <a
-                href="/test-lab"
-                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-cyan-400 hover:text-cyan-300 md:min-w-[230px]"
-              >
-                Página de testes (E-commerce)
-              </a>
-              <a
-                href="/qa-trilha"
-                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-fuchsia-400 hover:text-fuchsia-300 md:min-w-[210px]"
-              >
-                Iniciar trilha de QA
-              </a>
-              <a
-                href="/qa-docs"
-                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-emerald-400 hover:text-emerald-300 md:min-w-[220px]"
-              >
-                Ver documentações de QA
-              </a>
-              <a
-                href="/qa-boas-praticas"
-                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/70 transition hover:border-amber-400 hover:text-amber-300 md:min-w-[220px]"
-              >
-                Boas práticas de qualidade
-              </a>
-              <a
-                href="/tipos-de-testes"
-                className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-100/80 transition hover:border-emerald-400 hover:text-emerald-300 md:min-w-[200px]"
-              >
-                5 tipos de testes (QA)
-              </a>
+              </div>
+
+              <div className="grid gap-2 text-[11px] text-zinc-300 sm:grid-cols-2">
+                <a
+                  href="#fundamentos"
+                  className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-4 py-2 font-medium text-zinc-100 transition hover:border-emerald-400 hover:text-emerald-300"
+                >
+                  Fundamentos de qualidade
+                </a>
+                <a
+                  href="/test-lab"
+                  className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-4 py-2 font-medium text-zinc-100/80 transition hover:border-cyan-400 hover:text-cyan-300"
+                >
+                  Página de testes (E-commerce)
+                </a>
+                <a
+                  href="/qa-trilha"
+                  className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-4 py-2 font-medium text-zinc-100/80 transition hover:border-fuchsia-400 hover:text-fuchsia-300"
+                >
+                  Iniciar trilha de QA
+                </a>
+                <a
+                  href="/temas-qualidade"
+                  className="inline-flex items-center justify-center rounded-full border border-zinc-700 px-4 py-2 font-medium text-zinc-100/80 transition hover:border-emerald-400 hover:text-emerald-300"
+                >
+                  Temas sobre qualidade (conteúdos)
+                </a>
+              </div>
             </div>
           </div>
 
